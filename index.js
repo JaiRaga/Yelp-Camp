@@ -32,8 +32,10 @@ app.get("/campgrounds/new", (req, res) => {
   res.render("new");
 });
 
-app.get("/campgrounds/:id", (req, res) => {
-  res.send("campground!!");
+app.get("/campgrounds/:id", async (req, res) => {
+  const campground = await Campground.findOne({ _id: req.params.id });
+  console.log(req.params, campground);
+  res.render("show", { campground });
 });
 
 app.listen(PORT, () => console.log("Yelp Camp server is up"));
