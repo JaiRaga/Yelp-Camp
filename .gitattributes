@@ -1,1 +1,1 @@
-*.js linguist_detectable=true
+*.ejs linguist-language=JavaScript
