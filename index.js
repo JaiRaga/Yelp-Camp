@@ -34,7 +34,6 @@ app.get("/campgrounds/new", (req, res) => {
 
 app.get("/campgrounds/:id", async (req, res) => {
   const campground = await Campground.findOne({ _id: req.params.id });
-  console.log(req.params, campground);
   res.render("show", { campground });
 });
 
