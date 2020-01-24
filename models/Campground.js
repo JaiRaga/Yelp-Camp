@@ -11,9 +11,16 @@ const campgroundSchema = Schema({
     required: true
   },
   description: {
-    type: String
-    // required: true
-  }
+    type: String,
+    required: true
+  },
+  comments: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Comment",
+      required: true
+    }
+  ]
 });
 
 const Campground = mongoose.model("campground", campgroundSchema);
