@@ -1,0 +1,40 @@
+<%- include("../partials/header") %>
+<div class="container py-5">
+  <div class="row cl-md-6 offset-md-3">
+    <div class="card card-outline-secondary">
+      <div class="card-header text-center text-secondary">
+        <h4 class="mb-0">Add a New Comment to <%= campground.name %></h4>
+      </div>
+      <div class="card-body">
+        <form
+          class="text-center border border-light p-5"
+          action="/campgrounds/<%= campground._id%>/comments"
+          method="POST"
+        >
+          <input
+            type="text"
+            class="form-control mb-4"
+            id="text"
+            name="text"
+            placeholder="Comment"
+          />
+
+          <input
+            type="text"
+            class="form-control mb-4"
+            id="author"
+            name="author"
+            placeholder="Author"
+          />
+
+          <button class="btn btn-info btn-block my-4" type="submit">
+            Submit
+          </button>
+        </form>
+        <a href="/campgrounds" class="text-center">Go back</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include("../partials/footer") %>
